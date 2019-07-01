@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                BlackWhite();
+                PhotoRetouch.BlackWhite();
             }
 
             catch (NullReferenceException)
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                Canny();
+                PhotoRetouch.Canny();
             }
 
             catch (NullReferenceException)
@@ -90,7 +90,7 @@ namespace WindowsFormsApp1
         {
             try
             {
-                Sobel();
+                PhotoRetouch.Sobel();
             }
 
             catch (NullReferenceException)

@@ -12,10 +12,10 @@ namespace WindowsFormsApp1
 {
     class PhotoRetouch
     {
-        private void BlackWhite()
+        public static void BlackWhite()
         //Перевод в серые тона
         {
-            Bitmap grayImg = new Bitmap(LoadImg_box.Image);
+            Bitmap grayImg = new Bitmap(RetouchForm.LoadImg_box.Image);
             Graphics g = Graphics.FromImage(grayImg);
             ColorMatrix colorMatrix = new ColorMatrix(new float[][]
             {
@@ -36,7 +36,7 @@ namespace WindowsFormsApp1
             ConvertImg_box.Image = grayImg;
         }
 
-        private void Canny()
+        public static void Canny()
         //Обработка изображения методом Канни
         {
             Bitmap b = new Bitmap(LoadImg_box.Image);
@@ -488,7 +488,7 @@ namespace WindowsFormsApp1
 
         }
 
-        private void Sobel()
+        public static void Sobel()
         //Обработка изображения методом Собеля
         {
             Bitmap b = new Bitmap(LoadImg_box.Image);
