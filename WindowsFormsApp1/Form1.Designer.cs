@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class RetouchForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -180,7 +180,7 @@
             this.ClearConvBox_btn.UseVisualStyleBackColor = true;
             this.ClearConvBox_btn.Click += new System.EventHandler(this.ClearConvBox_btn_Click);
             // 
-            // Form1
+            // RetouchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -201,8 +201,8 @@
             this.Controls.Add(this.LoadImg_box);
             this.Controls.Add(this.BlackWhite_btn);
             this.Controls.Add(this.LoadImg_btn);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "RetouchForm";
+            this.Text = "Arboretum";
             ((System.ComponentModel.ISupportInitialize)(this.LoadImg_box)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConvertImg_box)).EndInit();
             this.ResumeLayout(false);
