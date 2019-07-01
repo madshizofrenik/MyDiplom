@@ -13,19 +13,14 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
 
-        private string image;
 
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void LoadImg_btn_Click(object sender, EventArgs e)
+            //Загружаем с диска изображение в бокс.
         {
             Bitmap image;
             Stream myStream = null;
@@ -48,8 +43,8 @@ namespace WindowsFormsApp1
                             image = new Bitmap(openFileDialog1.FileName);
 //                            pictureBox3.Width = image.Width;
 //                            pictureBox3.Height = image.Height;
-                            pictureBox2.Image = image;
-                            pictureBox2.Invalidate();   // Insert code to read the stream here.
+                            LoadImg_box.Image = image;
+                            LoadImg_box.Invalidate();   // Insert code to read the stream here.
                         }
                     }
                 }
@@ -62,15 +57,10 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void BlackWhite()
+            //Перевод в серые тона
         {
-            //перевод в серые тона
-            if (pictureBox1.Image == null)
-            {
-                MessageBox.Show("Изображение отсутствует!");
-                return;
-            }
-            Bitmap grayImg = new Bitmap(pictureBox1.Image);
+            Bitmap grayImg = new Bitmap(LoadImg_box.Image);
             Graphics g = Graphics.FromImage(grayImg);
             ColorMatrix colorMatrix = new ColorMatrix(new float[][]
             {
@@ -83,17 +73,18 @@ namespace WindowsFormsApp1
             });
             ImageAttributes attributes = new ImageAttributes();
             attributes.SetColorMatrix(colorMatrix);
-            g.DrawImage(pictureBox1.Image,
-                new Rectangle(0, 0, pictureBox1.Image.Width, pictureBox1.Image.Height), 0, 0,
-                pictureBox1.Image.Width, pictureBox1.Image.Height,
+            g.DrawImage(LoadImg_box.Image,
+                new Rectangle(0, 0, LoadImg_box.Image.Width, LoadImg_box.Image.Height), 0, 0,
+                LoadImg_box.Image.Width, LoadImg_box.Image.Height,
                 GraphicsUnit.Pixel, attributes);
             g.Dispose();
-            pictureBox1.Image = grayImg;
+            ConvertImg_box.Image = grayImg;
         }
 
-        private void canny()
+        private void Canny()
+            //Обработка изображения методом Канни
         {
-            Bitmap b = new Bitmap(pictureBox2.Image);
+            Bitmap b = new Bitmap(LoadImg_box.Image);
             int width = b.Width;
             int height = b.Height;
 
@@ -535,17 +526,18 @@ namespace WindowsFormsApp1
                     else
                         bb.SetPixel(i, j, Color.White);
                 }
-            }
-            pictureBox2.Image = bb;
+            }            
+            ConvertImg_box.Image = bb;
 
 
 
         }
 
-        private void sobel()
+        private void Sobel()
+            //Обработка изображения методом Собеля
         {
-            Bitmap b = new Bitmap(pictureBox2.Image);
-            Bitmap bb = new Bitmap(pictureBox2.Image);
+            Bitmap b = new Bitmap(LoadImg_box.Image);
+            Bitmap bb = new Bitmap(LoadImg_box.Image);
             int width = b.Width;
             int height = b.Height;
             int[,] gx = new int[,] { { -1, 0, 1 }, { -2, 0, 2 }, { -1, 0, 1 } };
@@ -610,22 +602,48 @@ namespace WindowsFormsApp1
                         bb.SetPixel(i, j, Color.White);
                 }
             }
-            pictureBox2.Image = bb;
+            ConvertImg_box.Image = bb;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void BlackWhite_btn_Click(object sender, EventArgs e)
         {
-            canny();
+            try
+            {
+                BlackWhite();
+            }
+
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Load and process the image by filter.");
+            }
+
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void CannyMethod_btn_Click(object sender, EventArgs e)
         {
-            sobel();
+            try
+            {
+                Canny();
+            }
+
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Load and process the image by filter.");
+            }
+
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void SobelMethod_btn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Sobel();
+            }
 
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Load and process the image by filter.");
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -638,19 +656,18 @@ namespace WindowsFormsApp1
  //           g.TranslateTransform(width, height);
 
             int pY, pX, group = 0;
-            int i = 0;
             Color clr;
 
-            pictureBox3.Refresh();
-            Bitmap nImg = new Bitmap(pictureBox2.Image.Width, pictureBox2.Image.Height);
+            ConvertImg_box.Refresh();
+            Bitmap nImg = new Bitmap(LoadImg_box.Image.Width, LoadImg_box.Image.Height);
 
             //Считываем и записываем координаты в список
-            for (pY=0; pY < pictureBox2.Image.Height; pY++)
+            for (pY=0; pY < LoadImg_box.Image.Height; pY++)
             {
-                for (pX=0; pX < pictureBox2.Image.Width; pX++)
+                for (pX=0; pX < LoadImg_box.Image.Width; pX++)
                 {
-                    pictureBox2.Refresh();
-                    clr = (pictureBox2.Image as Bitmap).GetPixel(pX, pY);
+                    LoadImg_box.Refresh();
+                    clr = (LoadImg_box.Image as Bitmap).GetPixel(pX, pY);
                     if ((clr.R.Equals(0)) && (clr.G.Equals(0)) && (clr.B.Equals(0)))
                     {
                         group = group + 1;
@@ -670,7 +687,7 @@ namespace WindowsFormsApp1
                     {
                         nImg.SetPixel(pX, pY, Color.White);
                     }
-                    pictureBox3.Image = nImg;
+                    ConvertImg_box.Image = nImg;
                 }
 
 
@@ -678,35 +695,48 @@ namespace WindowsFormsApp1
 
         }
 
-        private void pictureBox2_MouseClick(object sender, MouseEventArgs e)
+        private void ConvertImg_box_MouseClick(object sender, MouseEventArgs e)
         {
             // Система Координат
-            int hY, wX;
-            wX = pictureBox2.Image.Width;
-            hY = pictureBox2.Image.Height;
-            textBox2.Text = Convert.ToString(e.X);
-            textBox3.Text = Convert.ToString(e.Y);
-            Bitmap flag = new Bitmap(pictureBox2.Image);
-            Graphics flagGraphics = Graphics.FromImage(flag);
-            Pen myPen;
-            myPen = new Pen(Color.Red);
-            flagGraphics.DrawLine(myPen, 0, e.Y, wX, e.Y);
-            flagGraphics.DrawLine(myPen, e.X, 0, e.X, hY);
-            pictureBox2.Image = flag;
+            
+          if (ConvertImg_box.Image == null)
+            {
+                MessageBox.Show("Load and process the image by filter.");
+               return;
+            }
+                int hY, wX;
+                wX = ConvertImg_box.Image.Width;
+                hY = ConvertImg_box.Image.Height;
+                textBox2.Text = Convert.ToString(e.X);
+                textBox3.Text = Convert.ToString(e.Y);
+                Bitmap flag = new Bitmap(ConvertImg_box.Image);
+                Graphics flagGraphics = Graphics.FromImage(flag);
+                Pen myPen;
+                myPen = new Pen(Color.Red);
+                flagGraphics.DrawLine(myPen, 0, e.Y, wX, e.Y);
+                flagGraphics.DrawLine(myPen, e.X, 0, e.X, hY);
+                ConvertImg_box.Image = flag;
         }
 
 
         public int pixel_value(int X, int Y)
         {
             Color clr; byte val;
-            clr = (pictureBox2.Image as Bitmap).GetPixel(X, Y);
+            clr = (LoadImg_box.Image as Bitmap).GetPixel(X, Y);
             if ((clr.R.Equals(0)) && (clr.G.Equals(0)) && (clr.B.Equals(0))) val = 1;
             else val = 0;
             return val;
         }
 
+        private void ClearLoadBox_btn_Click(object sender, EventArgs e)
+        {
+            LoadImg_box.Image = null;
+        }
 
-
+        private void ClearConvBox_btn_Click(object sender, EventArgs e)
+        {
+            ConvertImg_box.Image = null;
+        }
     }
 
 

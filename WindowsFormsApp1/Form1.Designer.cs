@@ -28,86 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.LoadImg_btn = new System.Windows.Forms.Button();
+            this.BlackWhite_btn = new System.Windows.Forms.Button();
+            this.LoadImg_box = new System.Windows.Forms.PictureBox();
+            this.CannyMethod_btn = new System.Windows.Forms.Button();
+            this.SobelMethod_btn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.ConvertImg_box = new System.Windows.Forms.PictureBox();
+            this.ClearLoadBox_btn = new System.Windows.Forms.Button();
+            this.ClearConvBox_btn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.LoadImg_box)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConvertImg_box)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // LoadImg_btn
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Load Image";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.LoadImg_btn.Location = new System.Drawing.Point(12, 12);
+            this.LoadImg_btn.Name = "LoadImg_btn";
+            this.LoadImg_btn.Size = new System.Drawing.Size(75, 23);
+            this.LoadImg_btn.TabIndex = 0;
+            this.LoadImg_btn.Text = "Load Image";
+            this.LoadImg_btn.UseVisualStyleBackColor = true;
+            this.LoadImg_btn.Click += new System.EventHandler(this.LoadImg_btn_Click);
             // 
-            // pictureBox1
+            // BlackWhite_btn
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(10, 10);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.BlackWhite_btn.Location = new System.Drawing.Point(93, 12);
+            this.BlackWhite_btn.Name = "BlackWhite_btn";
+            this.BlackWhite_btn.Size = new System.Drawing.Size(75, 23);
+            this.BlackWhite_btn.TabIndex = 2;
+            this.BlackWhite_btn.Text = "B\\W";
+            this.BlackWhite_btn.UseVisualStyleBackColor = true;
+            this.BlackWhite_btn.Click += new System.EventHandler(this.BlackWhite_btn_Click);
             // 
-            // button2
+            // LoadImg_box
             // 
-            this.button2.Location = new System.Drawing.Point(93, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "B\\W";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.LoadImg_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadImg_box.Location = new System.Drawing.Point(189, 49);
+            this.LoadImg_box.Name = "LoadImg_box";
+            this.LoadImg_box.Size = new System.Drawing.Size(330, 300);
+            this.LoadImg_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LoadImg_box.TabIndex = 0;
+            this.LoadImg_box.TabStop = false;
             // 
-            // pictureBox2
+            // CannyMethod_btn
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(189, 49);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(330, 300);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseClick);
+            this.CannyMethod_btn.Location = new System.Drawing.Point(28, 49);
+            this.CannyMethod_btn.Name = "CannyMethod_btn";
+            this.CannyMethod_btn.Size = new System.Drawing.Size(75, 23);
+            this.CannyMethod_btn.TabIndex = 4;
+            this.CannyMethod_btn.Text = "Canny";
+            this.CannyMethod_btn.UseVisualStyleBackColor = true;
+            this.CannyMethod_btn.Click += new System.EventHandler(this.CannyMethod_btn_Click);
             // 
-            // button3
+            // SobelMethod_btn
             // 
-            this.button3.Location = new System.Drawing.Point(28, 49);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Canny";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(28, 78);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Sobel";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.SobelMethod_btn.Location = new System.Drawing.Point(28, 78);
+            this.SobelMethod_btn.Name = "SobelMethod_btn";
+            this.SobelMethod_btn.Size = new System.Drawing.Size(75, 23);
+            this.SobelMethod_btn.TabIndex = 5;
+            this.SobelMethod_btn.Text = "Sobel";
+            this.SobelMethod_btn.UseVisualStyleBackColor = true;
+            this.SobelMethod_btn.Click += new System.EventHandler(this.SobelMethod_btn_Click);
             // 
             // textBox1
             // 
@@ -116,35 +103,15 @@
             this.textBox1.Size = new System.Drawing.Size(74, 20);
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "0";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(183, 12);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Ось";
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 104);
+            this.label1.Location = new System.Drawing.Point(28, 126);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Координаты Центра";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(28, 204);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Запустить";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox2
             // 
@@ -182,42 +149,62 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Y=";
             // 
-            // pictureBox3
+            // ConvertImg_box
             // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(525, 49);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(330, 300);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 18;
-            this.pictureBox3.TabStop = false;
+            this.ConvertImg_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ConvertImg_box.Location = new System.Drawing.Point(525, 49);
+            this.ConvertImg_box.Name = "ConvertImg_box";
+            this.ConvertImg_box.Size = new System.Drawing.Size(330, 300);
+            this.ConvertImg_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ConvertImg_box.TabIndex = 18;
+            this.ConvertImg_box.TabStop = false;
+            this.ConvertImg_box.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ConvertImg_box_MouseClick);
+            // 
+            // ClearLoadBox_btn
+            // 
+            this.ClearLoadBox_btn.Location = new System.Drawing.Point(444, 20);
+            this.ClearLoadBox_btn.Name = "ClearLoadBox_btn";
+            this.ClearLoadBox_btn.Size = new System.Drawing.Size(75, 23);
+            this.ClearLoadBox_btn.TabIndex = 19;
+            this.ClearLoadBox_btn.Text = "Очистить";
+            this.ClearLoadBox_btn.UseVisualStyleBackColor = true;
+            this.ClearLoadBox_btn.Click += new System.EventHandler(this.ClearLoadBox_btn_Click);
+            // 
+            // ClearConvBox_btn
+            // 
+            this.ClearConvBox_btn.Location = new System.Drawing.Point(781, 20);
+            this.ClearConvBox_btn.Name = "ClearConvBox_btn";
+            this.ClearConvBox_btn.Size = new System.Drawing.Size(75, 23);
+            this.ClearConvBox_btn.TabIndex = 20;
+            this.ClearConvBox_btn.Text = "Очистить ";
+            this.ClearConvBox_btn.UseVisualStyleBackColor = true;
+            this.ClearConvBox_btn.Click += new System.EventHandler(this.ClearConvBox_btn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(868, 741);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.ClearConvBox_btn);
+            this.Controls.Add(this.ClearLoadBox_btn);
+            this.Controls.Add(this.ConvertImg_box);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SobelMethod_btn);
+            this.Controls.Add(this.CannyMethod_btn);
+            this.Controls.Add(this.LoadImg_box);
+            this.Controls.Add(this.BlackWhite_btn);
+            this.Controls.Add(this.LoadImg_btn);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LoadImg_box)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConvertImg_box)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,21 +212,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button LoadImg_btn;
+        private System.Windows.Forms.Button BlackWhite_btn;
+        private System.Windows.Forms.PictureBox LoadImg_box;
+        private System.Windows.Forms.Button CannyMethod_btn;
+        private System.Windows.Forms.Button SobelMethod_btn;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox ConvertImg_box;
+        private System.Windows.Forms.Button ClearLoadBox_btn;
+        private System.Windows.Forms.Button ClearConvBox_btn;
     }
 }
 
