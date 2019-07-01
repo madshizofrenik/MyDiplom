@@ -12,10 +12,10 @@ namespace WindowsFormsApp1
 {
     class PhotoRetouch
     {
-        public static void BlackWhite()
+        public static void BlackWhite(RetouchForm form)
         //Перевод в серые тона
         {
-            Bitmap grayImg = new Bitmap(RetouchForm.LoadImg_box.Image);
+            Bitmap grayImg = new Bitmap(form.LoadImg_box.Image);
             Graphics g = Graphics.FromImage(grayImg);
             ColorMatrix colorMatrix = new ColorMatrix(new float[][]
             {
@@ -28,18 +28,18 @@ namespace WindowsFormsApp1
             });
             ImageAttributes attributes = new ImageAttributes();
             attributes.SetColorMatrix(colorMatrix);
-            g.DrawImage(LoadImg_box.Image,
-                new Rectangle(0, 0, LoadImg_box.Image.Width, LoadImg_box.Image.Height), 0, 0,
-                LoadImg_box.Image.Width, LoadImg_box.Image.Height,
+            g.DrawImage(form.LoadImg_box.Image,
+                new Rectangle(0, 0, form.LoadImg_box.Image.Width, form.LoadImg_box.Image.Height), 0, 0,
+                form.LoadImg_box.Image.Width, form.LoadImg_box.Image.Height,
                 GraphicsUnit.Pixel, attributes);
             g.Dispose();
-            ConvertImg_box.Image = grayImg;
+            form.ConvertImg_box.Image = grayImg;
         }
 
-        public static void Canny()
+        public static void Canny(RetouchForm form)
         //Обработка изображения методом Канни
         {
-            Bitmap b = new Bitmap(LoadImg_box.Image);
+            Bitmap b = new Bitmap(form.LoadImg_box.Image);
             int width = b.Width;
             int height = b.Height;
 
@@ -433,7 +433,7 @@ namespace WindowsFormsApp1
                 }
             }
 
-            int threshold = Convert.ToInt16(textBox1.Text);
+            int threshold = Convert.ToInt16(form.textBox1.Text);
             int[,] allPixRf = new int[width, height];
             int[,] allPixGf = new int[width, height];
             int[,] allPixBf = new int[width, height];
@@ -482,17 +482,17 @@ namespace WindowsFormsApp1
                         bb.SetPixel(i, j, Color.White);
                 }
             }
-            ConvertImg_box.Image = bb;
+            form.ConvertImg_box.Image = bb;
 
 
 
         }
 
-        public static void Sobel()
+        public static void Sobel(RetouchForm form)
         //Обработка изображения методом Собеля
         {
-            Bitmap b = new Bitmap(LoadImg_box.Image);
-            Bitmap bb = new Bitmap(LoadImg_box.Image);
+            Bitmap b = new Bitmap(form.LoadImg_box.Image);
+            Bitmap bb = new Bitmap(form.LoadImg_box.Image);
             int width = b.Width;
             int height = b.Height;
             int[,] gx = new int[,] { { -1, 0, 1 }, { -2, 0, 2 }, { -1, 0, 1 } };
@@ -557,7 +557,7 @@ namespace WindowsFormsApp1
                         bb.SetPixel(i, j, Color.White);
                 }
             }
-            ConvertImg_box.Image = bb;
+            form.ConvertImg_box.Image = bb;
         }
     }
 }

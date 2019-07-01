@@ -1,10 +1,10 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class RetouchForm
+   partial class RetouchForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
-        /// </summary>
+        /// </summa ry>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -214,16 +214,16 @@
 
         private System.Windows.Forms.Button LoadImg_btn;
         private System.Windows.Forms.Button BlackWhite_btn;
-        private System.Windows.Forms.PictureBox LoadImg_box;
+        public System.Windows.Forms.PictureBox LoadImg_box;
         private System.Windows.Forms.Button CannyMethod_btn;
         private System.Windows.Forms.Button SobelMethod_btn;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox ConvertImg_box;
+        public System.Windows.Forms.PictureBox ConvertImg_box;
         private System.Windows.Forms.Button ClearLoadBox_btn;
         private System.Windows.Forms.Button ClearConvBox_btn;
     }
