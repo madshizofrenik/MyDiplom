@@ -11,6 +11,7 @@ using System.Drawing.Imaging;
 namespace WindowsFormsApp1
 {
     class PhotoRetouch
+        //Класс обработки изображений 
     {
         public static void BlackWhite(RetouchForm form)
         //Перевод в серые тона
@@ -558,6 +559,21 @@ namespace WindowsFormsApp1
                 }
             }
             form.ConvertImg_box.Image = bb;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }

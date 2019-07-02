@@ -11,6 +11,7 @@ using System.Drawing.Imaging;
 namespace WindowsFormsApp1
 {
     public partial class RetouchForm : Form
+        //Класс формы подготовки изображения
     {
 
 
