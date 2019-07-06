@@ -34,11 +34,6 @@
             this.CannyMethod_btn = new System.Windows.Forms.Button();
             this.SobelMethod_btn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.ConvertImg_box = new System.Windows.Forms.PictureBox();
             this.ClearLoadBox_btn = new System.Windows.Forms.Button();
             this.ClearConvBox_btn = new System.Windows.Forms.Button();
@@ -104,51 +99,6 @@
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "0";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 126);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Координаты Центра";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(52, 151);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 11;
-            this.textBox2.Text = "0";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(52, 178);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 12;
-            this.textBox3.Text = "0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(25, 154);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "X=";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(25, 181);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Y=";
-            // 
             // ConvertImg_box
             // 
             this.ConvertImg_box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -158,7 +108,6 @@
             this.ConvertImg_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ConvertImg_box.TabIndex = 18;
             this.ConvertImg_box.TabStop = false;
-            this.ConvertImg_box.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ConvertImg_box_MouseClick);
             // 
             // ClearLoadBox_btn
             // 
@@ -190,11 +139,6 @@
             this.Controls.Add(this.ClearConvBox_btn);
             this.Controls.Add(this.ClearLoadBox_btn);
             this.Controls.Add(this.ConvertImg_box);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.SobelMethod_btn);
             this.Controls.Add(this.CannyMethod_btn);
@@ -218,11 +162,6 @@
         private System.Windows.Forms.Button CannyMethod_btn;
         private System.Windows.Forms.Button SobelMethod_btn;
         public System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         public System.Windows.Forms.PictureBox ConvertImg_box;
         private System.Windows.Forms.Button ClearLoadBox_btn;
         private System.Windows.Forms.Button ClearConvBox_btn;
