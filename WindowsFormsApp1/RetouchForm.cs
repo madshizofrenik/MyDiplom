@@ -186,11 +186,13 @@ namespace WindowsFormsApp1
         }
 
         private void ClearLoadBox_btn_Click(object sender, EventArgs e)
+            //Очистка окна загрузки изображения
         {
             LoadImg_box.Image = null;
         }
 
         private void ClearConvBox_btn_Click(object sender, EventArgs e)
+            //Очистка окна обработки изображения
         {
             ConvertImg_box.Image = null;
         }
