@@ -37,6 +37,7 @@
             this.ConvertImg_box = new System.Windows.Forms.PictureBox();
             this.ClearLoadBox_btn = new System.Windows.Forms.Button();
             this.ClearConvBox_btn = new System.Windows.Forms.Button();
+            this.PixelMethod = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LoadImg_box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConvertImg_box)).BeginInit();
             this.SuspendLayout();
@@ -129,6 +130,16 @@
             this.ClearConvBox_btn.UseVisualStyleBackColor = true;
             this.ClearConvBox_btn.Click += new System.EventHandler(this.ClearConvBox_btn_Click);
             // 
+            // PixelMethod
+            // 
+            this.PixelMethod.Location = new System.Drawing.Point(28, 180);
+            this.PixelMethod.Name = "PixelMethod";
+            this.PixelMethod.Size = new System.Drawing.Size(75, 23);
+            this.PixelMethod.TabIndex = 21;
+            this.PixelMethod.Text = "Pixel Method";
+            this.PixelMethod.UseVisualStyleBackColor = true;
+            this.PixelMethod.Click += new System.EventHandler(this.PixelMethod_Click);
+            // 
             // RetouchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,6 +147,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(868, 741);
+            this.Controls.Add(this.PixelMethod);
             this.Controls.Add(this.ClearConvBox_btn);
             this.Controls.Add(this.ClearLoadBox_btn);
             this.Controls.Add(this.ConvertImg_box);
@@ -165,6 +177,7 @@
         public System.Windows.Forms.PictureBox ConvertImg_box;
         private System.Windows.Forms.Button ClearLoadBox_btn;
         private System.Windows.Forms.Button ClearConvBox_btn;
+        private System.Windows.Forms.Button PixelMethod;
     }
 }
 

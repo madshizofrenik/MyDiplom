@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 
@@ -553,6 +554,41 @@ namespace WindowsFormsApp1
                 }
             }
             form.ConvertImg_box.Image = bb;
+        }
+
+        public static void PixelMethod(RetouchForm form)
+            //Обработка изображения попиксельно
+        {
+            int pixel_value(int PixX, int PixY)
+                //Функция получения пикселя
+            {
+                Color PixColor = (form.LoadImg_box.Image as Bitmap).GetPixel(PixX, PixY);
+
+                return PixColor.ToArgb();
+            }
+
+            Bitmap BWImage = new Bitmap(form.LoadImg_box.Image.Width, form.LoadImg_box.Image.Height);
+
+            for (int y = 0; y < form.LoadImg_box.Image.Height; y++)
+                for (int x = 0; x < form.LoadImg_box.Image.Width; x++)
+                {
+                    if (x < 1 || y < 1)
+                    {
+                        BWImage.SetPixel(x, y, Color.FromArgb(255, 255, 255));
+                    }
+                    else
+                    {
+                        if (pixel_value(x, y) < pixel_value(x - 1, y - 1))
+                        {
+                            BWImage.SetPixel(x, y, Color.FromArgb(pixel_value(x, y)));
+                        }
+                        else
+                        {
+                            BWImage.SetPixel(x, y, Color.FromArgb(pixel_value(x - 1, y - 1)));
+                        }
+                    }
+                }
+            form.ConvertImg_box.Image = BWImage;
         }
 
         public override bool Equals(object obj)

@@ -9,8 +9,6 @@ namespace WindowsFormsApp1
     public partial class RetouchForm : Form
         //Класс формы подготовки изображения
     {
-
-
         public RetouchForm()
         {
             InitializeComponent();           
@@ -36,10 +34,7 @@ namespace WindowsFormsApp1
                     {
                         using (myStream)
                         {
-
                             image = new Bitmap(openFileDialog1.FileName);
-//                            pictureBox3.Width = image.Width;
-//                            pictureBox3.Height = image.Height;
                             LoadImg_box.Image = image;
                             LoadImg_box.Invalidate();   // Insert code to read the stream here.
                         }
@@ -91,6 +86,19 @@ namespace WindowsFormsApp1
             try
             {
                 PhotoRetouch.Sobel(this);
+            }
+
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Load and process the image by filter.");
+            }
+        }
+
+        private void PixelMethod_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PhotoRetouch.PixelMethod(this);
             }
 
             catch (NullReferenceException)
