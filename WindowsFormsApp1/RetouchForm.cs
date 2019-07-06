@@ -60,6 +60,7 @@ namespace WindowsFormsApp1
 
 
         private void BlackWhite_btn_Click(object sender, EventArgs e)
+            //Вызов класса обработки Ч\Б
         {
             try
             {
@@ -74,6 +75,7 @@ namespace WindowsFormsApp1
         }
 
         private void CannyMethod_btn_Click(object sender, EventArgs e)
+            //Вызов класса обработки методом Канни
         {
             try
             {
@@ -88,6 +90,7 @@ namespace WindowsFormsApp1
         }
 
         private void SobelMethod_btn_Click(object sender, EventArgs e)
+            //Вызов класса обработки Собеля
         {
             try
             {
